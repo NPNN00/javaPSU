@@ -146,7 +146,7 @@ public class Lab1 {
         int[] numbers1 = new int[]{3,6,6};
         int[] numbers2 = new int[]{6,3,6};
 
-        System.out.print("\nЗадание 2.2 //Строка сравнения\n");
+        System.out.print("\nЗадание 2.4 //Строка сравнения\n");
         for (int i = 0; i < numbers1.length; i++) {
             System.out.printf("\nx=%d y=%d\nРезультат: %s\n", numbers1[i],numbers2[i], makeDecision(numbers1[i],numbers2[i]));
         }
@@ -261,7 +261,7 @@ public class Lab1 {
     }
 
     public static boolean equalNum(int x){
-        //3.6 Степень числа
+        //3.6 Одинаковость
         int lastNumber;
 
         while (x!=0){
@@ -295,7 +295,7 @@ public class Lab1 {
         //3.8 ТЕСТЫ
         int[] numbers = new int[]{0,1,2,4};
 
-        System.out.print("\nЗадание 3.6 //Левый треугольник\n");
+        System.out.print("\nЗадание 3.8 //Левый треугольник\n");
         for (int number : numbers) {
             System.out.printf("\nx=%s\nРезультат:\n", number);
             leftTraingle(number);
@@ -328,15 +328,16 @@ public class Lab1 {
 
     public static int findLast(int[] arr,int x){
         //4.2 Поиск последнего значения
+        int result = -1;
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i]==x) return i;
+            if(arr[i]==x) result = i;
         }
-        return -1;
+        return result;
     }
     public static void findLastTest(){
         //4.2 ТЕСТЫ
-        int[][] numbers = new int[][]{new int[]{1,2,3,5},new int[]{1,2,3,5},new int[]{1,2,4}};
-        int[] guessedNumbers=new int[]{1,3,3};
+        int[][] numbers = new int[][]{new int[]{1,2,3,5},new int[]{1,2,3,5},new int[]{1,3,3,5},new int[]{1,2,4}};
+        int[] guessedNumbers=new int[]{1,3,3,3};
 
         System.out.print("\nЗадание 4.2 //Поиск последнего значения\n");
         for (int i = 0; i < numbers.length; i++) {
