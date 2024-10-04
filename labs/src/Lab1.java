@@ -1,8 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
-
+import java.util.*;
 
 
 public class Lab1 {
@@ -311,22 +307,27 @@ public class Lab1 {
             int tries = 0;
             Random ran = new Random();
             Scanner input = new Scanner(System.in);
-            int randomNumber = ran.nextInt(9);
-            int guessedNumber;
+            String randomNumber = Integer.toString(ran.nextInt(9));
+            String guessedNumber="";
             System.out.print("\nЗадание 3.10 //Угадайка\n");
             System.out.println("Введите число от 0 до 9:");
             while (true) {
                 tries += 1;
-                guessedNumber = auto? ran.nextInt(9) : input.nextInt();
-                if(auto) System.out.printf("*Ввели %d*\n",guessedNumber);
+                if(auto){
+                    guessedNumber = Integer.toString(ran.nextInt(9));
+                    System.out.printf("*Ввели %s*\n",guessedNumber);
+                }
+                else {
+                       guessedNumber=input.nextLine();
+                }
 
-                if (guessedNumber == randomNumber) {
+                if (Objects.equals(guessedNumber, randomNumber)) {
                     break;
                 } else {
                     System.out.println("Вы не угадали, введите число от 0 до 9:");
                 }
             }
-            System.out.printf("Вы угадали! Это было число %d\n", randomNumber);
+            System.out.printf("Вы угадали! Это было число %s\n", randomNumber);
             System.out.printf("Вы отгадали за %d попытки\n\n", tries);
         }
 
@@ -457,28 +458,28 @@ public class Lab1 {
     }
     public static void main(String[] args) {
         Lab1Methods methods = new Lab1Methods();
-        methods.sumLastNumsTests();
-        methods.isPositiveTests();
-        methods.isUpperCaseTests();
-        methods.isDivisorTests();
-        methods.lastNumSumTests();
+//        methods.sumLastNumsTests();
+//        methods.isPositiveTests();
+//        methods.isUpperCaseTests();
+//        methods.isDivisorTests();
+//        methods.lastNumSumTests();
+//
+//        methods.safeDivTests();
+//        methods.makeDecisionTests();
+//        methods.sum3Tests();
+//        methods.ageTests();
+//        methods.printDaysTests();
+//
+//        methods.reverseListNumsTest();
+//        methods.powTest();
+//        methods.equalNumTest();
+//        methods.leftTraingleTest();
+        methods.guessGame(false);
 
-        methods.safeDivTests();
-        methods.makeDecisionTests();
-        methods.sum3Tests();
-        methods.ageTests();
-        methods.printDaysTests();
-
-        methods.reverseListNumsTest();
-        methods.powTest();
-        methods.equalNumTest();
-        methods.leftTraingleTest();
-        methods.guessGame(true);
-
-        methods.findLastTest();
-        methods.addTest();
-        methods.reverseTest();
-        methods.concatTest();
-        methods.deleteNegativeTest();
+//        methods.findLastTest();
+//        methods.addTest();
+//        methods.reverseTest();
+//        methods.concatTest();
+//        methods.deleteNegativeTest();
     }
 }
